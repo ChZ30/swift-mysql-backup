@@ -1,0 +1,26 @@
+# Swift build artifacts
+.build/
+Packages/
+.swiftpm/
+
+# Swift tarball
+swift-*.tar.gz
+swift-*/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Vapor / Leaf (if any)
+DerivedData/
+
+# Swift
+.build/
+Packages/
+.swiftpm/
+
+# MySQLDemo
+MySQLDemo/.build/
+MySQLDemo/Packages/
