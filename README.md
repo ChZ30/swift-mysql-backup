@@ -26,19 +26,41 @@ Wait a minute for the environment to build. You’ll get a full VS Code in your 
 4. Install Swift in the Codespace
 Open the terminal in VS Code (Ctrl + `).
 
-Run these commands to add the official Swift repository terminal and install Swift:
+4.1 Check Ubuntu Version (optional but safe)
+lsb_release -a
+
+Codespaces typically run Ubuntu 24.04 (Noble). If it's different, adjust the repository URL accordingly.
+
+4.2 Remove any incorrect Swift repository (if you tried before)
+
+sudo rm -f /etc/apt/sources.list.d/swift.list
+
+4.3 Add the official Swift repository (for Ubuntu 24.04)
 
 wget -q -O - https://swift.org/keys/automatic-signing-key-2024-05.asc | gpg --dearmor | sudo tee /usr/share/keyrings/swift.gpg
 echo "deb [signed-by=/usr/share/keyrings/swift.gpg] https://download.swift.org/swift-6.0.2-release/ubuntu2404/swift-6.0.2-RELEASE /" | sudo tee /etc/apt/sources.list.d/swift.list
+
+Note: If you have a different Ubuntu version, replace ubuntu2404 with ubuntu2204 (22.04) or ubuntu2004 (20.04).
+
+4.4 Update package lists
+
 sudo apt-get update
+
+4.5 Install Swift
+
 sudo apt-get install swiftlang
 
-Verify with:
+4.6 Verify installation
+
 swift --version
+
+You should see something like: Swift version 6.0.2 (swift-6.0.2-RELEASE).
 
 5. Install MySQL Client Libraries
 
 sudo apt-get install -y libmysqlclient-dev
+
+These are needed for Swift packages that interact with MySQL.
 
 6. Create the Swift Project
 
@@ -48,7 +70,7 @@ cd MySQLDemo
 swift package init --type executable
 
 7. Edit Package.swift to Add Dependencies
-Open Package.swift and replace its content with the final version (shown in the video). It will include:
+Open Package.swift and replace its content with the final version (provided in the video). It will include:
 
 vapor – web framework
 
@@ -107,19 +129,43 @@ exit
 💡 Note: The application can create these tables automatically the first time you sign up or add an item, but running the SQL manually ensures everything is set up correctly and gives you full control.
 
 9. Create the Swift Source Files
-Inside Sources/MySQLDemo/, create the following files (exact code shown in video):
+After initializing the project (step 6), you'll have a Sources/MySQLDemo/ folder containing main.swift. Now add the remaining files:
 
-configure.swift – sets up Leaf, sessions, and MySQL connection pool.
+💡 Option A: Using the VS Code File Explorer (Easiest)
+In the left sidebar, click the Explorer icon (two sheets of paper).
 
-routes.swift – defines all HTTP endpoints.
+Navigate to Sources/MySQLDemo/.
 
-ItemManager.swift – contains Item model and database operations.
+Right‑click inside the folder and select New File.
 
-User.swift – contains User model and authentication logic.
+Name each file as follows (one by one):
 
-AuthMiddleware.swift – protects routes that require login.
+configure.swift
 
-main.swift (already exists) – starts the Vapor application.
+routes.swift
+
+ItemManager.swift
+
+User.swift
+
+AuthMiddleware.swift
+
+Double‑click each file to open it, then copy the code from the video (or from the provided code snippets) and paste it in.
+
+Save each file with Ctrl+S.
+
+💡 Option B: Using the Terminal (if you prefer)
+
+Navigate to the source folder:
+
+cd Sources/MySQLDemo
+Then create each empty file with touch:
+
+touch configure.swift routes.swift ItemManager.swift User.swift AuthMiddleware.swift
+
+Now open each file in the editor (e.g., nano configure.swift) and paste the code from the video.
+
+💡 Video Note: The exact code for each file will be shown in the video. You can pause and copy it directly. Alternatively, the code is available in the video description or a linked gist.
 
 10. Create Leaf Templates
 Create the directory:
@@ -156,3 +202,18 @@ Username: admin
 Password: secret
 
 You can also create new accounts via the Sign up link.
+
+13. Commit and Push to GitHub
+Before committing, create a .gitignore file in the repository root (/workspaces/swift) to exclude build artifacts:
+
+.build/
+Packages/
+.swiftpm/
+*.tar.gz
+
+Then:
+
+cd /workspaces/swift
+git add .
+git commit -m "Add complete Swift MySQL web app"
+git push
