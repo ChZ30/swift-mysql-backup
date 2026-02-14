@@ -26,9 +26,6 @@ Wait a minute for the environment to build. You’ll get a full VS Code in your 
 Install Swift in the Codespace
 Open the terminal in VS Code (Ctrl + `).
 
-Check Ubuntu Version (optional but safe)
-lsb_release -a
-
 Cleanup:
 
 sudo rm -f /etc/apt/sources.list.d/swift.list
