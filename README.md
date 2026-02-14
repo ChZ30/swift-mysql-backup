@@ -240,6 +240,7 @@ docker exec -it mysql-demo mysql -u root -psecret
 Run it:
 
 cd /workspaces/swift/MySQLDemo
+
 swift run
 
 MySQL is used with Swift with these accomplishments:
