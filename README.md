@@ -137,34 +137,15 @@ exit
 9. Create the Swift Source Files
 After initializing the project (step 6), you'll have a Sources/MySQLDemo/ folder containing main.swift. Now add the remaining files:
 
-💡 Option A: Using the VS Code File Explorer (Easiest)
-In the left sidebar, click the Explorer icon (two sheets of paper).
-
-Navigate to Sources/MySQLDemo/.
-
-Right‑click inside the folder and select New File.
-
-Name each file as follows (one by one):
-
-configure.swift
-
-routes.swift
-
-ItemManager.swift
-
-User.swift
-
-AuthMiddleware.swift
-
-Double‑click each file to open it, then copy the code from the video (or from the provided code snippets) and paste it in.
-
-Save each file with Ctrl+S.
-
-💡 Option B: Using the Terminal (if you prefer)
-
 Navigate to the source folder:
 
 cd Sources/MySQLDemo
+
+If you already have a project but the Sources/MySQLDemo folder is missing (as in your case):
+
+cd ~/MySQLDemo
+mkdir -p Sources/MySQLDemo
+
 Then create each empty file with touch:
 
 touch configure.swift routes.swift ItemManager.swift User.swift AuthMiddleware.swift
