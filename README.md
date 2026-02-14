@@ -245,7 +245,11 @@ swift run
 MySQL is used with Swift with these accomplishments:
 
 ✅ Successfully connected Swift to MySQL using Vapor's MySQLKit
+
 ✅ Created and managed database tables (users and items)
+
 ✅ Performed full CRUD operations (add, edit, delete, search)
+
 ✅ Handled user authentication with MySQL storing usernames and passwords
+
 ✅ The App is running right now with MySQL as its database
