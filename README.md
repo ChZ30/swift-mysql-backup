@@ -217,3 +217,8 @@ cd /workspaces/swift
 git add .
 git commit -m "Add complete Swift MySQL web app"
 git push
+
+14. Once everything is done and u need to run the program
+
+cd /workspaces/swift/MySQLDemo
+swift run
