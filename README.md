@@ -10,7 +10,7 @@ Log in to GitHub.
 
 Click the + icon (top right) → New repository.
 
-Name it (e.g., swift-mysql-app), make it Public (or Private if you prefer).
+Name it "swift", make it Public (or Private if you prefer).
 
 Do not initialize with a README (you can add one later).
 
