@@ -63,6 +63,16 @@ You should see something like: Swift version 6.0.2 (swift-6.0.2-RELEASE).
 
 💡 Option B: Direct Download
 
+Cleanup:
+
+sudo rm -f /etc/apt/sources.list.d/swift.list
+
+Check Ubuntu version:
+
+lsb_release -a
+
+run:
+
 cd /workspaces/swift
 
 Choose the URL based on your Ubuntu version:
