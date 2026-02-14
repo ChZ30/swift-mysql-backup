@@ -243,6 +243,7 @@ cd /workspaces/swift/MySQLDemo
 swift run
 
 MySQL is used with Swift with these accomplishments:
+
 ✅ Successfully connected Swift to MySQL using Vapor's MySQLKit
 ✅ Created and managed database tables (users and items)
 ✅ Performed full CRUD operations (add, edit, delete, search)
