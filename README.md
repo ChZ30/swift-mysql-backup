@@ -31,6 +31,9 @@ lsb_release -a
 
 Codespaces typically run Ubuntu 24.04 (Noble). If it's different, adjust the repository URL accordingly.
 
+💡 Option A: Install via Official Repository (Recommended if version matches)
+Use this only if your Ubuntu version is 24.04 (Noble) or 22.04 (Jammy).
+
 4.2 Remove any incorrect Swift repository (if you tried before)
 
 sudo rm -f /etc/apt/sources.list.d/swift.list
@@ -55,6 +58,36 @@ sudo apt-get install swiftlang
 swift --version
 
 You should see something like: Swift version 6.0.2 (swift-6.0.2-RELEASE).
+
+⚠️ Note: You may see a harmless GPG warning about the Yarn repository – ignore it. If the Swift repository fails with "404 Not Found" or "Release file is missing", skip to Option B.
+
+💡 Option B: Direct Download
+
+cd /workspaces/swift
+
+Choose the URL based on your Ubuntu version:
+
+⚠️ For Ubuntu 24.04:
+
+wget https://download.swift.org/swift-6.0.2-release/ubuntu2404/swift-6.0.2-RELEASE/swift-6.0.2-RELEASE-ubuntu24.04.tar.gz
+tar xzf swift-6.0.2-RELEASE-ubuntu24.04.tar.gz
+echo 'export PATH=/workspaces/swift/swift-6.0.2-RELEASE-ubuntu24.04/usr/bin:$PATH' >> ~/.bashrc
+
+⚠️ For Ubuntu 22.04:
+
+wget https://download.swift.org/swift-6.0.2-release/ubuntu2204/swift-6.0.2-RELEASE/swift-6.0.2-RELEASE-ubuntu22.04.tar.gz
+tar xzf swift-6.0.2-RELEASE-ubuntu22.04.tar.gz
+echo 'export PATH=/workspaces/swift/swift-6.0.2-RELEASE-ubuntu22.04/usr/bin:$PATH' >> ~/.bashrc
+
+Then reload your shell configuration:
+
+source ~/.bashrc
+
+Verify Swift Installation:
+
+swift --version
+
+You should see output like Swift version 6.0.2 (swift-6.0.2-RELEASE).
 
 5. Install MySQL Client Libraries
 
