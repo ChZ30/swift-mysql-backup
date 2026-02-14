@@ -100,7 +100,7 @@ Now connect to the MySQL prompt inside the container:
 
 docker exec -it mysql-demo mysql -u root -p
 
-Enter the password: secret
+Enter the password: secret 💡(even if nothing appears to be typing, JUST TYPE IT)
 
 Once inside the MySQL prompt (mysql>), paste the following SQL:
 
