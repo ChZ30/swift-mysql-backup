@@ -73,7 +73,7 @@ lsb_release -a
 
 run:
 
-cd /workspaces/swift
+cd /workspaces/swift-mysql-backup
 
 Choose the URL based on your Ubuntu version:
 
@@ -81,13 +81,13 @@ Choose the URL based on your Ubuntu version:
 
 wget https://download.swift.org/swift-6.0.2-release/ubuntu2404/swift-6.0.2-RELEASE/swift-6.0.2-RELEASE-ubuntu24.04.tar.gz
 tar xzf swift-6.0.2-RELEASE-ubuntu24.04.tar.gz
-echo 'export PATH=/workspaces/swift/swift-6.0.2-RELEASE-ubuntu24.04/usr/bin:$PATH' >> ~/.bashrc
+echo 'export PATH=/workspaces/swift-mysql-backup/swift-6.0.2-RELEASE-ubuntu24.04/usr/bin:$PATH' >> ~/.bashrc
 
 ⚠️ For Ubuntu 22.04:
 
 wget https://download.swift.org/swift-6.0.2-release/ubuntu2204/swift-6.0.2-RELEASE/swift-6.0.2-RELEASE-ubuntu22.04.tar.gz
 tar xzf swift-6.0.2-RELEASE-ubuntu22.04.tar.gz
-echo 'export PATH=/workspaces/swift/swift-6.0.2-RELEASE-ubuntu22.04/usr/bin:$PATH' >> ~/.bashrc
+echo 'export PATH=/workspaces/swift-mysql-backup/swift-6.0.2-RELEASE-ubuntu22.04/usr/bin:$PATH' >> ~/.bashrc
 
 Then reload your shell configuration:
 
@@ -247,7 +247,7 @@ Password: secret
 You can also create new accounts via the Sign up link.
 
 13. Commit and Push to GitHub
-Before committing, create a .gitignore file in the repository root (/workspaces/swift) to exclude build artifacts:
+Before committing, create a .gitignore file in the repository root (/workspaces/swift-mysql-backup) to exclude build artifacts:
 
 .build/
 Packages/
@@ -282,7 +282,7 @@ docker exec -it mysql-demo mysql -u root -psecret
 
 Run it:
 
-cd /workspaces/swift/MySQLDemo
+cd /workspaces/swift-mysql-backup/MySQLDemo
 
 swift run
 
