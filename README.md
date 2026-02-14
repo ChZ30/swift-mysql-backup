@@ -1,9 +1,9 @@
 # swift
 
 Prerequisites
-A GitHub account (to use Codespaces)
+A GitHub account to use Codespaces (recommended para magamit sa Windows)
 
-Optional: Swift 6.0+ and MySQL 8.0 installed if running locally
+Optional: Swift 6.0+ and MySQL 8.0 installed if running locally (pang linux / MacOS)
 
 
 
