@@ -23,45 +23,11 @@ Select the Codespaces tab → Create codespace on main.
 
 Wait a minute for the environment to build. You’ll get a full VS Code in your browser.
 
-4. Install Swift in the Codespace
+Install Swift in the Codespace
 Open the terminal in VS Code (Ctrl + `).
 
-4.1 Check Ubuntu Version (optional but safe)
+Check Ubuntu Version (optional but safe)
 lsb_release -a
-
-Codespaces typically run Ubuntu 24.04 (Noble). If it's different, adjust the repository URL accordingly.
-
-💡 Option A: Install via Official Repository (Recommended if version matches)
-Use this only if your Ubuntu version is 24.04 (Noble) or 22.04 (Jammy).
-
-4.2 Remove any incorrect Swift repository (if you tried before)
-
-sudo rm -f /etc/apt/sources.list.d/swift.list
-
-4.3 Add the official Swift repository (for Ubuntu 24.04)
-
-wget -q -O - https://swift.org/keys/automatic-signing-key-2024-05.asc | gpg --dearmor | sudo tee /usr/share/keyrings/swift.gpg
-echo "deb [signed-by=/usr/share/keyrings/swift.gpg] https://download.swift.org/swift-6.0.2-release/ubuntu2404/swift-6.0.2-RELEASE /" | sudo tee /etc/apt/sources.list.d/swift.list
-
-Note: If you have a different Ubuntu version, replace ubuntu2404 with ubuntu2204 (22.04) or ubuntu2004 (20.04).
-
-4.4 Update package lists
-
-sudo apt-get update
-
-4.5 Install Swift
-
-sudo apt-get install swiftlang
-
-4.6 Verify installation
-
-swift --version
-
-You should see something like: Swift version 6.0.2 (swift-6.0.2-RELEASE).
-
-⚠️ Note: You may see a harmless GPG warning about the Yarn repository – ignore it. If the Swift repository fails with "404 Not Found" or "Release file is missing", skip to Option B.
-
-💡 Option B: Direct Download
 
 Cleanup:
 
