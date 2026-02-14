@@ -219,6 +219,25 @@ git commit -m "Add complete Swift MySQL web app"
 git push
 
 14. Once everything is done and u need to run the program
+In your terminal, run:
+
+docker ps | grep mysql-demo
+
+If you see no output, the container is not running. Start it:
+
+docker start mysql-demo
+
+Run this to test the connection:
+
+docker exec mysql-demo mysqladmin ping -u root -psecret
+
+You should see mysqld is alive. If not, wait a bit and retry.
+
+Connect to MySQL:
+
+docker exec -it mysql-demo mysql -u root -psecret
+
+Run it:
 
 cd /workspaces/swift/MySQLDemo
 swift run
